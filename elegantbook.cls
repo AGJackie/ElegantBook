@@ -4,7 +4,10 @@
 %%
 %% This work may be distributed and/or modified freely
 %% available at https://github.com/ElegantLaTeX/ElegantBook
-% 
+%% This work is modified by Jackie, based on ElegantBook Version 3.11
+%% available at https://github.com/AGJackie/ElegantBookIM
+%% If you are interested in actuarial science, you can visit my website https://actuarygarden.cn
+%
 %%%%%%%%%%%%%%%%%%%%%
 % % !Mode:: "TeX:UTF-8"
 \NeedsTeXFormat{LaTeX2e}
@@ -122,7 +125,7 @@
 
 \ifdefstring{\ELEGANT@device}{pad}{
 \geometry{
-  paperwidth=7.5in, 
+  paperwidth=7.5in,
   paperheight=10in,
   margin=16mm,
   headheight=2.17cm,
@@ -155,7 +158,7 @@
       \newcommand*{\heiti}{\CJKfamily{zhhei}}
       \newcommand*{\kaishu}{\CJKfamily{zhkai}}
       \newcommand*{\fangsong}{\CJKfamily{zhfs}}}{\relax}
-    
+
     \ifdefstring{\ELEGANT@chinesefont}{nofont}{
       \RequirePackage[UTF8,scheme=plain,fontset=none]{ctex}}{\relax}
 
@@ -276,7 +279,7 @@
 \ifdefstring{\ELEGANT@titlestyle}{hang}{\def\style{hang}}{\relax}
 \ifdefstring{\ELEGANT@titlestyle}{display}{\def\style{display}}{\relax}
 
-% reference: 
+% reference:
 % https://tex.stackexchange.com/questions/58506/how-to-make-a-new-command-similar-to-author
 % https://pastebin.com/C8W4axzV
 \newcommand\email[1]{\href{mailto:#1}{\nolinkurl{#1}}}
@@ -303,7 +306,7 @@
 \RequirePackage[shortlabels,inline]{enumitem}
 \setlist{nolistsep}
 
-\RequirePackage[font=small,labelfont={bf,color=structurecolor}]{caption} 
+\RequirePackage[font=small,labelfont={bf,color=structurecolor}]{caption}
 \captionsetup[table]{skip=3pt}
 \captionsetup[figure]{skip=3pt}
 
@@ -542,25 +545,25 @@
       separator sign={.},},
     defstyle/.style={
       common,
-      colframe=main,  
+      colframe=main,
       colback=main!5,
-      colbacktitle=main, 
+      colbacktitle=main,
       overlay unbroken and last={
         \node[anchor=south east, outer sep=0pt] at (\linewidth-width,0) {
           \textcolor{main}{$\clubsuit$}};}},
     thmstyle/.style={
       common,
-      colframe=second,  
+      colframe=second,
       colback=second!5,
-      colbacktitle=second, 
+      colbacktitle=second,
       overlay unbroken and last={
         \node[anchor=south east, outer sep=0pt] at (\linewidth-width,0) {
           \textcolor{second}{$\heartsuit$}};}},
     propstyle/.style={
       common,
-      colframe=third,  
+      colframe=third,
       colback=third!5,
-      colbacktitle=third, 
+      colbacktitle=third,
       overlay unbroken and last={
         \node[anchor=south east, outer sep=0pt] at (\linewidth-width,0) {
           \textcolor{third}{$\spadesuit$}};}},}
@@ -580,7 +583,7 @@
   \let\proof\relax
   % \let\proofname\relax
   \let\endproof\relax
-  
+
   % declare a new theorem style
   \newtheoremstyle{edefstyle}{3pt}{3pt}{\citshape}{-3pt}{
     \bfseries\color{main}}{}{0.5em}{\thmname{#1} \thmnumber{#2} \thmnote{(#3)}}
@@ -599,7 +602,7 @@
 
 
   \theoremstyle{ethmstyle} %theorem style
-  
+
   \newtheorem{etheorem}{\theoremname}[chapter]
   \newenvironment{theorem}[2]{
     \ignorespaces\ifstrempty{#1}{\etheorem}{\etheorem[#1]}\ifstrempty{#2}{}{\label{thm:#2}}}{
@@ -609,17 +612,17 @@
   \newenvironment{lemma}[2]{
     \ignorespaces\ifstrempty{#1}{\elemma}{\elemma[#1]}\ifstrempty{#2}{}{\label{lem:#2}}}{
     \endelemma}
-  
+
   \newtheorem{ecorollary}{\corollaryname}[chapter]
   \newenvironment{corollary}[2]{
     \ignorespaces\ifstrempty{#1}{\ecorollary}{\ecorollary[#1]}\ifstrempty{#2}{}{\label{cor:#2}}}{
     \endecorollary}
-  
+
   \newtheorem{epostulate}{\postulatename}[chapter]
   \newenvironment{postulate}[2]{
     \ifstrempty{#1}{\epostulate}{\epostulate[#1]}\ifstrempty{#2}{}{\label{pos:#2}}}{
     \endepostulate}
-  
+
   \newtheorem{eaxiom}{\axiomname}[chapter]
   \newenvironment{axiom}[2]{
     \ifstrempty{#1}{\eaxiom}{\eaxiom[#1]}\ifstrempty{#2}{}{\label{axi:#2}}}{
@@ -633,7 +636,7 @@
 }{\relax}
 
 % main（green-def): example exercise problem solution
-% second（orange-thm）: proof note remark  
+% second（orange-thm）: proof note remark
 % third（blue-prop):  assumptions property conclusion custom
 
 %% Example with counter
@@ -753,7 +756,7 @@
 \renewcommand{\sectionmark}[1]{\markright{\thesection\, #1}{} }
 \renewcommand{\chaptermark}[1]{\markboth{\chaptername \, #1\,}{}}
 
-\renewcommand{\baselinestretch}{1.35} 
+\renewcommand{\baselinestretch}{1.35}
 
 \renewcommand*{\maketitle}{%
 \hypersetup{pageanchor=false}
@@ -781,7 +784,7 @@
   \vskip-2ex
   \hspace{2em}
   \parbox{0.8\textwidth}{
-    \bfseries\Huge 
+    \bfseries\Huge
       \ifcsname @title\endcsname \@title \fi
     \par}
   \vfill
@@ -817,7 +820,7 @@
   \vfill
   \begin{center}
     \setstretch{1.3}
-    \parbox[t]{0.7\textwidth}{\centering \citshape 
+    \parbox[t]{0.7\textwidth}{\centering \citshape
       \ifcsname @extrainfo\endcsname\@extrainfo\fi}
   \end{center}
   \vfill
@@ -884,4 +887,4 @@
 
 \newenvironment{change}{
   \begin{enumerate}[label=\small\protect\circled{\arabic*}]}{
-  \end{enumerate}}
+  \end{enumerate}} 
